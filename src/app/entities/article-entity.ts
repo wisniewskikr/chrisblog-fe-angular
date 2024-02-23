@@ -1,8 +1,8 @@
 import { TemplateEnum } from "../enums/template-enum";
-import { Category } from "./category-entity";
-import { Tag } from "./tag-entity";
+import { CategoryEntity } from "./category-entity";
+import { TagEntity } from "./tag-entity";
 
-export interface Article {
+export interface ArticleEntity {
 
     id: number;
     pageDescription: string;
@@ -13,8 +13,8 @@ export interface Article {
     author: string;
     url: string;
     content: string;
-    category: Category;
-    tags: Tag[];
+    category: CategoryEntity;
+    tags: TagEntity[];
     template: TemplateEnum;
 
 }

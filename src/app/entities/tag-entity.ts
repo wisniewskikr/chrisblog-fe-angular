@@ -1,9 +1,9 @@
-import { Article } from "./article-entity";
+import { ArticleEntity } from "./article-entity";
 
-export interface Tag {
+export interface TagEntity {
 
     id: number;
     name: string;
-    articles: Article[];
+    articles: ArticleEntity[];
 
 }

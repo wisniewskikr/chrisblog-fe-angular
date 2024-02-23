@@ -1,9 +1,9 @@
-import { Article } from "./article-entity";
+import { ArticleEntity } from "./article-entity";
 
-export interface Category {
+export interface CategoryEntity {
 
     id: number;
     name: string;
-    articles: Article[];
+    articles: ArticleEntity[];
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from '../../entities/article-entity';
+import { ArticleEntity } from '../../entities/article-entity';
 import { CommonModule } from '@angular/common';
 import { TemplateEnum } from '../../enums/template-enum';
 import { ListMainSortingComponent } from '../list-main-sorting/list-main-sorting.component';
@@ -14,7 +14,7 @@ import { ListMainPaginationComponent } from '../list-main-pagination/list-main-p
 })
 export class ListMainComponent {
 
-  articles: Article[] = [
+  articles: ArticleEntity[] = [
     {
       id: 1, 
       pageDescription: 'Page description 1',
