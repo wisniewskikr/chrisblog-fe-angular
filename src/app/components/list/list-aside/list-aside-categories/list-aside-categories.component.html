@@ -1,9 +1,9 @@
 <nav id="colorlib-main-menu" role="navigation">			
     <ul>
-        <li [class.colorlib-active]="selectedCategory == 1"> <a href="#">Home</a> </li>
+        <li [class.colorlib-active]="selectedCategory == 1"> <a routerLink="">Home</a> </li>
         <span>
             <li *ngFor="let category of categories" [class.colorlib-active]="selectedCategory == category.id"> <a th:href="#"> {{category.name}} </a> </li>
         </span>            
-        <li> <a href="#">About Me</a> </li>			
+        <li> <a routerLink="about">About Me</a> </li>			
     </ul>
 </nav>
