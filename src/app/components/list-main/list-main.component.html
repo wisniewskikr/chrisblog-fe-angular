@@ -1,36 +1,14 @@
 <div id="colorlib-main">
     <section class="ftco-section">    
         <div class="container">
-            <div class="row px-md-4">
-
-                <list-main-sorting />
+            <div class="row px-md-4">                
 
                 <span *ngIf="articles.length != 0">
+                    <list-main-sorting />
                     
-                    <span *ngFor="let article of articles">						
-                        <div class="col-md-12">
-                            <!-- TODO -->
-                            <!-- div class="blog-entry ftco-animate d-md-flex" -->
-                            <div class="blog-entry d-md-flex">
-                                <a href="#" class="img img-2" style="background-image: url(https://chrisblog.s3-eu-west-1.amazonaws.com/articles/article-{{article.id}}/main.jpg)"></a>
-                                <div class="text text-2 pl-md-4">
-                                    <h3 class="mb-2"><a href="#"><span> {{article.title}} </span></a></h3>
-                                    <div class="meta-wrap">
-                                        <p class="meta">
-                                            <span><i class="icon-calendar mr-2"></i><span> {{article.date}} </span></span>
-                                            <span><i class="icon-person mr-2"></i><span> {{article.author}} </span></span>					              				
-                                            <span><i class="icon-folder mr-2"></i><span> {{article.category.name}} </span></span>
-                                        </p>
-                                    </div>
-                                    <p class="mb-4"> {{article.description}} </p>
-                                    <p><a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
-                                </div>
-                            </div>
-                        </div>						
-                    </span>
+                    <list-main-articles />
 
                     <list-main-pagination />
-
                 </span>                
 
                 <span *ngIf="articles.length == 0">

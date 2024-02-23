@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
 import { ArticleEntity } from '../../entities/article-entity';
-import { CommonModule } from '@angular/common';
 import { TemplateEnum } from '../../enums/template-enum';
-import { ListMainSortingComponent } from '../list-main-sorting/list-main-sorting.component';
-import { ListMainPaginationComponent } from '../list-main-pagination/list-main-pagination.component';
-import { ListMainArticlesComponent } from '../list-main-articles/list-main-articles.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'list-main',
+  selector: 'list-main-articles',
   standalone: true,
-  imports: [CommonModule, ListMainArticlesComponent, ListMainSortingComponent, ListMainPaginationComponent],
-  templateUrl: './list-main.component.html',
-  styleUrl: './list-main.component.css'
+  imports: [CommonModule],
+  templateUrl: './list-main-articles.component.html',
+  styleUrl: './list-main-articles.component.css'
 })
-export class ListMainComponent {
+export class ListMainArticlesComponent {
 
   articles: ArticleEntity[] = [
     {
