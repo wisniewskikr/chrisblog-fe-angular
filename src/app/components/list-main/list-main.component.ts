@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { Article } from '../../models/article';
 import { CommonModule } from '@angular/common';
 import { TemplateEnum } from '../../enums/TemplateEnum';
+import { ListMainSortingComponent } from '../list-main-sorting/list-main-sorting.component';
+import { ListMainPaginationComponent } from '../list-main-pagination/list-main-pagination.component';
 
 @Component({
   selector: 'list-main',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ListMainSortingComponent, ListMainPaginationComponent],
   templateUrl: './list-main.component.html',
   styleUrl: './list-main.component.css'
 })
