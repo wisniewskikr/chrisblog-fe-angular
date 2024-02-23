@@ -1,4 +1,4 @@
-enum TemplateEnum {
+export enum TemplateEnum {
 
     NONE = 'null',
     CONTENT = 'content',
