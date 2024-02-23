@@ -14,7 +14,6 @@ export interface Article {
     content: string;
     category: Category;
     tags: Tag[];
-    // TODO
-    // TemplateEnum 
+    template: TemplateEnum;
 
 }
