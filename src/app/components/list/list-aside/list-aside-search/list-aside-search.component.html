@@ -1,1 +1,12 @@
-<p>list-aside-search works!</p>
+<!-- TODO -->
+<!-- div class="sidebar-box ftco-animate search-section" -->
+<div class="sidebar-box search-section">
+    <h3 class="sidebar-heading section-header">Search</h3>
+    <div class="search-form">
+        <div class="form-group">
+              <span *ngIf="searchText == ''" class="icon icon-search" onClick=""></span>
+              <span *ngIf="searchText != ''" class="icon icon-cross" onClick=""></span>
+              <input type="text" class="form-control" placeholder="Type a keyword" onkeydown="" value="{{searchText}}" /> 
+        </div>
+    </div> 
+</div>
