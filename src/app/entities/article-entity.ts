@@ -1,6 +1,6 @@
 import { TemplateEnum } from "../enums/TemplateEnum";
-import { Category } from "./category";
-import { Tag } from "./tag";
+import { Category } from "./category-entity";
+import { Tag } from "./tag-entity";
 
 export interface Article {
 

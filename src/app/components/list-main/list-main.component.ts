@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from '../../models/article';
+import { Article } from '../../entities/article-entity';
 import { CommonModule } from '@angular/common';
 import { TemplateEnum } from '../../enums/TemplateEnum';
 import { ListMainSortingComponent } from '../list-main-sorting/list-main-sorting.component';
