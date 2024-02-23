@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ArticleEntity } from '../../entities/article-entity';
 import { CommonModule } from '@angular/common';
-import { TemplateEnum } from '../../enums/template-enum';
-import { ListMainSortingComponent } from '../list-main-sorting/list-main-sorting.component';
-import { ListMainPaginationComponent } from '../list-main-pagination/list-main-pagination.component';
-import { ListMainArticlesComponent } from '../list-main-articles/list-main-articles.component';
+import { ListMainSortingComponent } from './list-main-sorting/list-main-sorting.component';
+import { ListMainPaginationComponent } from './list-main-pagination/list-main-pagination.component';
+import { ListMainArticlesComponent } from './list-main-articles/list-main-articles.component';
+import { ArticleEntity } from '../../../entities/article-entity';
+import { TemplateEnum } from '../../../enums/template-enum';
 
 @Component({
   selector: 'list-main',

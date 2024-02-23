@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SortingEnum } from '../../enums/sorting-enum';
 import { CommonModule } from '@angular/common';
+import { SortingEnum } from '../../../../enums/sorting-enum';
 
 @Component({
   selector: 'list-main-sorting',

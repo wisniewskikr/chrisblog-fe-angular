@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PaginationModel } from '../../models/pagination-model';
 import { CommonModule } from '@angular/common';
+import { PaginationModel } from '../../../../models/pagination-model';
 
 @Component({
   selector: 'list-main-pagination',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ArticleEntity } from '../../entities/article-entity';
-import { TemplateEnum } from '../../enums/template-enum';
 import { CommonModule } from '@angular/common';
+import { ArticleEntity } from '../../../../entities/article-entity';
+import { TemplateEnum } from '../../../../enums/template-enum';
 
 @Component({
   selector: 'list-main-articles',
