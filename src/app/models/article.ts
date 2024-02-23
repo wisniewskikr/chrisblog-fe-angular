@@ -1,4 +1,5 @@
 import { Category } from "./category";
+import { Tag } from "./tag";
 
 export interface Article {
 
@@ -12,8 +13,8 @@ export interface Article {
     url: string;
     content: string;
     category: Category;
+    tags: Tag[];
     // TODO
     // TemplateEnum 
-    // Set<TagEntity> tag
 
 }
