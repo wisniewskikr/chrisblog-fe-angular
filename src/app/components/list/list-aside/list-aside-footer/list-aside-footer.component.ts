@@ -9,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class ListAsideFooterComponent {
 
+  applicationVersion: string = '1.0.0';
+
 }
