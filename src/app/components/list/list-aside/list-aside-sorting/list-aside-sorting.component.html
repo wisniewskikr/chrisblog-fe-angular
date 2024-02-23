@@ -1,1 +1,13 @@
-<p>list-aside-sorting works!</p>
+<!-- Display only on small screens -->
+<span class="display-on-small-screen">
+    <div class="sidebar-box ftco-animate search-section">
+        <h3 class="sidebar-heading section-header">Sorting</h3>
+        <div class="search-form">
+            <div class="form-group">
+                  <select class="form-control sorting-no-xl-screen" >
+                    <option *ngFor="let sort of sorting" value="{{sort.value}}"> {{sort.text}} </option>			        
+                </select>
+            </div>
+           </div> 
+       </div>
+   </span>
