@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SortingEnum } from '../../enums/SortingEnum';
+import { SortingEnum } from '../../enums/sorting-enum';
 import { CommonModule } from '@angular/common';
 
 @Component({

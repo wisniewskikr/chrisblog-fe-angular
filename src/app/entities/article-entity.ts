@@ -1,4 +1,4 @@
-import { TemplateEnum } from "../enums/TemplateEnum";
+import { TemplateEnum } from "../enums/template-enum";
 import { Category } from "./category-entity";
 import { Tag } from "./tag-entity";
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Article } from '../../entities/article-entity';
 import { CommonModule } from '@angular/common';
-import { TemplateEnum } from '../../enums/TemplateEnum';
+import { TemplateEnum } from '../../enums/template-enum';
 import { ListMainSortingComponent } from '../list-main-sorting/list-main-sorting.component';
 import { ListMainPaginationComponent } from '../list-main-pagination/list-main-pagination.component';
 
