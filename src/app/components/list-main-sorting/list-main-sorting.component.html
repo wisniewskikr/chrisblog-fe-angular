@@ -1,1 +1,11 @@
-<p>list-main-sorting works!</p>
+<!-- Display only on big screens -->
+<span class="display-on-big-screen col-md-12">
+    <div class="form-group row sorting-row ">
+        <label for="sorting" class="col-md-2 col-form-label lb-lg sorting">Sorting:</label>
+        <div class="col-md-4">
+            <select class="form-control sorting">
+                <option *ngFor="let sort of sorting" value="{{sort.value}}"> {{sort.text}} </option>			        
+            </select>
+        </div>
+    </div>
+</span>
