@@ -1,3 +1,5 @@
+import { Category } from "./category";
+
 export interface Article {
 
     id: number;
@@ -9,9 +11,9 @@ export interface Article {
     author: string;
     url: string;
     content: string;
+    category: Category;
     // TODO
     // TemplateEnum 
-    // CategoryEntity category
     // Set<TagEntity> tag
 
 }
