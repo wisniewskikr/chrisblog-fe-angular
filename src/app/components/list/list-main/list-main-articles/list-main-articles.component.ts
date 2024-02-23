@@ -36,29 +36,29 @@ export class ListMainArticlesComponent {
         }
       ]
     },
-    // {
-    //   id: 2, 
-    //   pageDescription: 'Page description 2',
-    //   author: 'Author 2',
-    //   content: 'Content 2',
-    //   date: 'Date 2',
-    //   description: 'Description 2',
-    //   template: TemplateEnum.CONTENT,
-    //   title: 'Title 2',
-    //   url: 'Url 2',
-    //   category: {
-    //     id: 2,
-    //     name: 'Category 2',
-    //     articles: []
-    //   },
-    //   tags: [
-    //     {
-    //       id: 2,
-    //       name: 'Tag 2',
-    //       articles: []
-    //     }
-    //   ]
-    // }
+    {
+      id: 2, 
+      pageDescription: 'Page description 2',
+      author: 'Author 2',
+      content: 'Content 2',
+      date: 'Date 2',
+      description: 'Description 2',
+      template: TemplateEnum.CONTENT,
+      title: 'Title 2',
+      url: 'Url 2',
+      category: {
+        id: 2,
+        name: 'Category 2',
+        articles: []
+      },
+      tags: [
+        {
+          id: 2,
+          name: 'Tag 2',
+          articles: []
+        }
+      ]
+    }
   ];
 
 }
