@@ -1,8 +1,9 @@
+import { HomeEnum } from "../enums/home-enum";
 import { PaginationModel } from "./pagination-model";
 
 export class BlogModel extends PaginationModel {
 
-    selectedCategory: string = "home";
+    selectedCategory: string = HomeEnum.HOME;
     selectedTag: number|null = null;
     searchText: string|null = null;
 
