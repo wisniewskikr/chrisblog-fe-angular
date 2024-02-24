@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleEntity } from '../../../../entities/article-entity';
 import { TemplateEnum } from '../../../../enums/template-enum';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'list-main-articles',
@@ -61,5 +61,15 @@ export class ListMainArticlesComponent {
       ]
     }
   ];
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    
+    this.activatedRoute.params.subscribe(params => {
+      console.log("ListMainArticlesComponent - category: " + params['category']);
+      console.log("ListMainArticlesComponent - sorting: " + params['sorting']);
+      console.log("ListMainArticlesComponent - page: " + params['page']);
+    });
+
+  }
 
 }
