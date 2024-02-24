@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleEntity } from '../../../../entities/article-entity';
 import { TemplateEnum } from '../../../../enums/template-enum';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'list-main-articles',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './list-main-articles.component.html',
   styleUrl: './list-main-articles.component.css'
 })
