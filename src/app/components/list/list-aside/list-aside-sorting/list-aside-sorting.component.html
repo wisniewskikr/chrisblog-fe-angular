@@ -4,8 +4,8 @@
         <h3 class="sidebar-heading section-header">Sorting</h3>
         <div class="search-form">
             <div class="form-group">
-                  <select class="form-control sorting-no-xl-screen" >
-                    <option *ngFor="let sort of sorting" value="{{sort.value}}"> {{sort.text}} </option>			        
+                  <select class="form-control sorting-no-xl-screen" (change)="onChange($event)">
+                    <option *ngFor="let sort of sorting" value="{{sort.value}}" [selected]="selectedSoring == sort.value"> {{sort.text}} </option>			        
                 </select>
             </div>
            </div> 
