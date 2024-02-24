@@ -86,6 +86,16 @@
 							</div> 
 						</span>
 						<!-- STOP ARTICLE LINK DOCUMENT -->
+
+						<!-- START ARTICLE LINK GITHUB -->
+						<span *ngIf="article.template == 'link-github'">
+							<h2 class="mb-3 mt-5 articleSectionTitle">Github Repository</h2>				            
+							<div class="row articleSection pt-md-4">
+								Source Code with explanation you can find in my 
+								<a href="{{article.url}}" target="blank">Github Repository</a>.
+							</div>
+						</span>
+						<!-- STOP ARTICLE LINK GITHUB -->
 			            
 			            <div class="form-group article-button">
                         	<!-- TODO -->
