@@ -72,7 +72,7 @@ export class ListMainArticlesComponent {
 
     this.activatedRoute.queryParams.subscribe(params => {
       console.log("ListMainArticlesComponent - searchtext: " + params['searchtext']);
-      console.log("ListMainArticlesComponent - tagId: " + params['tagId']);
+      console.log("ListMainArticlesComponent - tagid: " + params['tagid']);
     });
 
   }

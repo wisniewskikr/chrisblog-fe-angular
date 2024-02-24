@@ -30,8 +30,8 @@ export class ListMainSortingComponent {
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
-      this.searchText = params['searchText'];
-      this.tagId = params['tagId'];
+      this.searchText = params['searchtext'];
+      this.tagId = params['tagid'];
     });
 
   }
@@ -39,7 +39,7 @@ export class ListMainSortingComponent {
   onChange(event: any) {
     this.selectedSoring = event.target.value;
     const path = `category/${this.categoryId}/sorting/${this.selectedSoring}/page/${this.page}`;
-    this.router.navigate([path]);
+    this.router.navigate([path], { queryParams: { searchtext: this.searchText, tagid: this.tagId } });
   }
 
 }
