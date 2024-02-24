@@ -14,6 +14,8 @@ export class ListMainSortingComponent {
 
   sorting: SortingEnum[] = [SortingEnum.AUTHOR_DECREASING, SortingEnum.AUTHOR_INCREASING, SortingEnum.DATE_DECREASING, 
                             SortingEnum.DATE_INCREASING, SortingEnum.TITLE_DECREASING, SortingEnum.TITLE_INCREASING];
+
+  selectedSoring: string|null = null;
   
   constructor(private activatedRoute: ActivatedRoute) {
 
@@ -21,6 +23,7 @@ export class ListMainSortingComponent {
       console.log("ListMainSortingComponent - category: " + params['category']);
       console.log("ListMainSortingComponent - sorting: " + params['sorting']);
       console.log("ListMainSortingComponent - page: " + params['page']);
+      this.selectedSoring = params['sorting'];
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
