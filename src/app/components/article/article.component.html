@@ -61,9 +61,21 @@
 			            </p>
 			            				         
 			         	<!-- START ARTICLE CONTENT -->
-						<h2 *ngIf="article.template == 'content'" class="mb-3 mt-5 articleSectionTitle">Description</h2>				            
-			            <div *ngIf="article.template == 'content'" class="row articleSection pt-md-4"> {{article.content}} </div>	
-						<!-- STOP ARTICLE CONTENT -->	            
+						<span *ngIf="article.template == 'content'">
+							<h2 class="mb-3 mt-5 articleSectionTitle">Description</h2>				            
+			            	<div class="row articleSection pt-md-4"> {{article.content}} </div>	
+						</span>
+						<!-- STOP ARTICLE CONTENT -->
+						
+						<!-- START ARTICLE LINK ALBUM -->
+						<span *ngIf="article.template == 'link-album'">
+							<h2 class="mb-3 mt-5 articleSectionTitle">Google Album</h2>				            
+							<div class="row articleSection pt-md-4">
+								Pictures from this area you can find in my 
+								<a href="{{article.url}}" target="blank">Google Album</a>.
+							</div>
+						</span>
+						<!-- STOP ARTICLE LINK ALBUM -->
 			            
 			            <div class="form-group article-button">
                         	<!-- TODO -->

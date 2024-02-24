@@ -25,7 +25,7 @@ export class ArticleComponent {
     description: 'Description 1',
     pageDescription: 'Page Description 1',
     tags: [],
-    template: TemplateEnum.CONTENT,
+    template: TemplateEnum.LINK_ALBUM,
     title: 'Title 1',
     url: 'Url 1'
   };
