@@ -70,6 +70,11 @@ export class ListMainArticlesComponent {
       console.log("ListMainArticlesComponent - page: " + params['page']);
     });
 
+    this.activatedRoute.queryParams.subscribe(params => {
+      console.log("ListMainArticlesComponent - searchtext: " + params['searchtext']);
+      console.log("ListMainArticlesComponent - tags: " + params['tags']);
+    });
+
   }
 
 }
