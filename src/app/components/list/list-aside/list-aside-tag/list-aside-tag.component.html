@@ -5,8 +5,8 @@
     <ul class="tagcloud" >
         <span *ngIf="tags.length != 0">
             <span *ngFor="let tag of tags">
-                <a *ngIf="tagId != tag.id" href="#" class="tag-cloud-link no-selected" > {{tag.name}} </a>
-                <a *ngIf="tagId == tag.id" th:href="#" class="tag-cloud-link selected" > {{tag.name}} </a>
+                <a *ngIf="tagId != tag.id" [routerLink]="" (click)="onClick(tag.id)" class="tag-cloud-link no-selected" > {{tag.name}} </a>
+                <a *ngIf="tagId == tag.id" [routerLink]="" (click)="onClick(tag.id)" class="tag-cloud-link selected" > {{tag.name}} </a>
             </span>
         </span>
         <span *ngIf="tags.length == 0">

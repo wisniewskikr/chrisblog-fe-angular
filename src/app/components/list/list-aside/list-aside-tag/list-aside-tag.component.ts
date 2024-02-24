@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { TagEntity } from '../../../../entities/tag-entity';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'list-aside-tag',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './list-aside-tag.component.html',
   styleUrl: './list-aside-tag.component.css'
 })
@@ -44,6 +44,12 @@ export class ListAsideTagComponent {
       this.tagId = (params['tagid'] != undefined) ? Number(params['tagid']) : null;
     });
 
-  }    
+  }
+  
+  onClick(tag: number) {
+    this.tagId = (this.tagId != tag) ? tag : null;
+    const path = `category/${this.categoryId}/sorting/${this.soring}/page/${this.page}`;
+    this.router.navigate([path], { queryParams: { searchtext: this.searchText, tagid: this.tagId } });
+  }
 
 }
