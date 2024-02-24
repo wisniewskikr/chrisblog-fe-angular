@@ -1,12 +1,12 @@
 <!-- TODO -->
 <!-- div class="sidebar-box ftco-animate tag-section" *ngIf="selectedCategory != 'home'" -->
-<div class="sidebar-box tag-section" *ngIf="selectedCategory != 'home'">
+<div class="sidebar-box tag-section" *ngIf="categoryId != 0">
     <h3 class="sidebar-heading section-header">Tag Cloud</h3>
     <ul class="tagcloud" >
         <span *ngIf="tags.length != 0">
             <span *ngFor="let tag of tags">
-                <a *ngIf="selectedTag != tag.id" href="#" class="tag-cloud-link no-selected" > {{tag.name}} </a>
-                <a *ngIf="selectedTag == tag.id" th:href="#" class="tag-cloud-link selected" > {{tag.name}} </a>
+                <a *ngIf="tagId != tag.id" href="#" class="tag-cloud-link no-selected" > {{tag.name}} </a>
+                <a *ngIf="tagId == tag.id" th:href="#" class="tag-cloud-link selected" > {{tag.name}} </a>
             </span>
         </span>
         <span *ngIf="tags.length == 0">
