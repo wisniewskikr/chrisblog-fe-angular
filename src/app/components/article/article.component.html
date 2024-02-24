@@ -60,13 +60,15 @@
 			              <img src="https://chrisblog.s3-eu-west-1.amazonaws.com/articles/article-{{article.id}}/main.jpg" alt="" class="img-fluid">
 			            </p>
 			            				         
-			         	<h2 class="mb-3 mt-5 articleSectionTitle">Description</h2>				            
-			            <div class="row articleSection pt-md-4"> {{article.content}} </div>		            
+			         	<!-- START ARTICLE CONTENT -->
+						<h2 *ngIf="article.template == 'content'" class="mb-3 mt-5 articleSectionTitle">Description</h2>				            
+			            <div *ngIf="article.template == 'content'" class="row articleSection pt-md-4"> {{article.content}} </div>	
+						<!-- STOP ARTICLE CONTENT -->	            
 			            
 			            <div class="form-group article-button">
-                        <!-- TODO -->
-			        	<a th:href="" class="btn py-3 px-4 btn-primary">Go Back</a>
-			         </div>			         
+                        	<!-- TODO -->
+			        		<a th:href="" class="btn py-3 px-4 btn-primary">Go Back</a>
+			         	</div>			         
 					
 	    		</div>
             </div>    	
