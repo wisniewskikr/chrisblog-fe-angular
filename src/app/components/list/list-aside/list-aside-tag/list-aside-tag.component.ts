@@ -48,6 +48,7 @@ export class ListAsideTagComponent {
   
   onClick(tag: number) {
     this.tagId = (this.tagId != tag) ? tag : null;
+    this.searchText = null;
     const path = `category/${this.categoryId}/sorting/${this.soring}/page/${this.page}`;
     this.router.navigate([path], { queryParams: { searchtext: this.searchText, tagid: this.tagId } });
   }
