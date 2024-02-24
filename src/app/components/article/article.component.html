@@ -76,6 +76,16 @@
 							</div>
 						</span>
 						<!-- STOP ARTICLE LINK ALBUM -->
+
+						<!-- START ARTICLE LINK DOCUMENT -->
+						<span *ngIf="article.template == 'link-document'">
+							<h2 class="mb-3 mt-5 articleSectionTitle">Google Document</h2>				            
+							<div class="row articleSection pt-md-4">
+								More details about this topic you can find in my 
+								<a href="{{article.url}}" target="blank">Google Document</a>.
+							</div> 
+						</span>
+						<!-- STOP ARTICLE LINK DOCUMENT -->
 			            
 			            <div class="form-group article-button">
                         	<!-- TODO -->
