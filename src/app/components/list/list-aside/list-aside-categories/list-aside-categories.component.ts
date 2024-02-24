@@ -25,7 +25,7 @@ export class ListAsideCategoriesComponent {
     }
   ];
 
-  selectedCategory: number|null = null;
+  categoryId: number|null = null;
   soring: string|null = null;
   page: string|null = null;
   searchText: string|null = null;
@@ -34,7 +34,7 @@ export class ListAsideCategoriesComponent {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
 
     this.activatedRoute.params.subscribe(params => {
-      this.selectedCategory = Number(params['categoryId']);
+      this.categoryId = Number(params['categoryId']);
       this.soring = params['sorting'];
       this.page = params['page'];
     });
@@ -47,8 +47,9 @@ export class ListAsideCategoriesComponent {
   }
 
   onClick(category: number) {
-    this.selectedCategory = category;
-    const path = `category/${this.selectedCategory}/sorting/${this.soring}/page/${this.page}`;
+    this.categoryId = category;
+    this.tagId = null;
+    const path = `category/${this.categoryId}/sorting/${this.soring}/page/${this.page}`;
     this.router.navigate([path], { queryParams: { searchtext: this.searchText, tagid: this.tagId } });
   }
 
