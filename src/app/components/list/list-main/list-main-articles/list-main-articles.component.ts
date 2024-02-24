@@ -65,14 +65,14 @@ export class ListMainArticlesComponent {
   constructor(private activatedRoute: ActivatedRoute) {
     
     this.activatedRoute.params.subscribe(params => {
-      console.log("ListMainArticlesComponent - category: " + params['category']);
+      console.log("ListMainArticlesComponent - categoryId: " + params['categoryId']);
       console.log("ListMainArticlesComponent - sorting: " + params['sorting']);
       console.log("ListMainArticlesComponent - page: " + params['page']);
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
       console.log("ListMainArticlesComponent - searchtext: " + params['searchtext']);
-      console.log("ListMainArticlesComponent - tags: " + params['tags']);
+      console.log("ListMainArticlesComponent - tagId: " + params['tagId']);
     });
 
   }

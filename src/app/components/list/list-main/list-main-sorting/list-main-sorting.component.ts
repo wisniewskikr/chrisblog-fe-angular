@@ -15,30 +15,30 @@ export class ListMainSortingComponent {
   sorting: SortingEnum[] = [SortingEnum.AUTHOR_DECREASING, SortingEnum.AUTHOR_INCREASING, SortingEnum.DATE_DECREASING, 
                             SortingEnum.DATE_INCREASING, SortingEnum.TITLE_DECREASING, SortingEnum.TITLE_INCREASING];
 
-  category: string|null = null;
+  categoryId: string|null = null;
   selectedSoring: string|null = null;
   page: string|null = null;
   searchText: string|null = null;
-  tags: string|null = null;
+  tagId: string|null = null;
   
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
 
     this.activatedRoute.params.subscribe(params => {
-      this.category = params['category'];
+      this.categoryId = params['categoryId'];
       this.selectedSoring = params['sorting'];
       this.page = params['page'];
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
       this.searchText = params['searchText'];
-      this.tags = params['tags'];
+      this.tagId = params['tagId'];
     });
 
   }
 
   onChange(event: any) {
     this.selectedSoring = event.target.value;
-    const path = `category/${this.category}/sorting/${this.selectedSoring}/page/${this.page}`;
+    const path = `category/${this.categoryId}/sorting/${this.selectedSoring}/page/${this.page}`;
     this.router.navigate([path]);
   }
 
