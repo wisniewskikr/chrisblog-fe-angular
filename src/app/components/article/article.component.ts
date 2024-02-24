@@ -25,7 +25,7 @@ export class ArticleComponent {
     description: 'Description 1',
     pageDescription: 'Page Description 1',
     tags: [],
-    template: TemplateEnum.LINK_GITHUB,
+    template: TemplateEnum.LINK_YOUTUME,
     title: 'Title 1',
     url: 'Url 1'
   };

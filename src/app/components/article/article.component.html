@@ -96,6 +96,16 @@
 							</div>
 						</span>
 						<!-- STOP ARTICLE LINK GITHUB -->
+
+						<!-- START ARTICLE LINK YOUTUBE -->
+						<span *ngIf="article.template == 'link-youtube'">
+							<h2 class="mb-3 mt-5 articleSectionTitle">YouTube Channel</h2>				            
+							<div class="row articleSection pt-md-4">
+								More details about this topic you can find on my
+								<a href="{{article.url}}" target="blank">YouTube Channel</a>.
+							</div>
+						</span>
+						<!-- STOP ARTICLE LINK YOUTUBE -->
 			            
 			            <div class="form-group article-button">
                         	<!-- TODO -->
