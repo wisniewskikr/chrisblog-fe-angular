@@ -36,4 +36,8 @@ export class ListMainSortingComponent {
 
   }
 
+  onChange(event: any) {
+    console.log(event.target.value);
+  }
+
 }

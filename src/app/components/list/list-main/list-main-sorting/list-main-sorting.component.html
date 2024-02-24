@@ -3,7 +3,7 @@
     <div class="form-group row sorting-row ">
         <label for="sorting" class="col-md-2 col-form-label lb-lg sorting">Sorting:</label>
         <div class="col-md-4">
-            <select class="form-control sorting">
+            <select class="form-control sorting" (change)="onChange($event)">
                 <option *ngFor="let sort of sorting" value="{{sort.value}}" [selected]="selectedSoring == sort.value"> {{sort.text}} </option>			        
             </select>
         </div>
