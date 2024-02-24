@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { ArticleContentComponent } from './article-content/article-content.component';
 import { ArticleEntity } from '../../entities/article-entity';
 import { TemplateEnum } from '../../enums/template-enum';
 
 @Component({
   selector: 'article',
   standalone: true,
-  imports: [ArticleContentComponent],
+  imports: [],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })
