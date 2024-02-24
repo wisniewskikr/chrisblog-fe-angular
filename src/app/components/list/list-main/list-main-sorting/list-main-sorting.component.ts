@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SortingEnum } from '../../../../enums/sorting-enum';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'list-main-sorting',
@@ -21,7 +21,7 @@ export class ListMainSortingComponent {
   searchText: string|null = null;
   tags: string|null = null;
   
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
 
     this.activatedRoute.params.subscribe(params => {
       this.category = params['category'];
@@ -37,7 +37,9 @@ export class ListMainSortingComponent {
   }
 
   onChange(event: any) {
-    console.log(event.target.value);
+    this.selectedSoring = event.target.value;
+    const path = `category/${this.category}/sorting/${this.selectedSoring}/page/${this.page}`;
+    this.router.navigate([path]);
   }
 
 }
