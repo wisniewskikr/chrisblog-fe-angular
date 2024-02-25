@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticleEntity } from '../../entities/article-entity';
-import { TemplateEnum } from '../../enums/template-enum';
 import { CommonModule } from '@angular/common';
+import { ArticleService } from '../../services/article.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'article',
@@ -10,24 +11,23 @@ import { CommonModule } from '@angular/common';
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })
-export class ArticleComponent {
+export class ArticleComponent implements OnInit {
 
-  article: ArticleEntity = {
-    id: 1,
-    author: 'Author 1',
-    category: {
-      id: 1,
-      name: 'Category 1',
-      articles: []
-    },
-    content: 'Content 1',
-    date: 'Date 1',
-    description: 'Description 1',
-    pageDescription: 'Page Description 1',
-    tags: [],
-    template: TemplateEnum.LINK_YOUTUME,
-    title: 'Title 1',
-    url: 'Url 1'
-  };
+  article: ArticleEntity|null = null;
+
+  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {}
+
+  ngOnInit(): void {
+    
+    this.activatedRoute.params.subscribe(params => {
+      
+      let response = this.articleService.findArticleById(Number(params['id']));
+      response.subscribe((data)=>{  
+        this.article = data;
+      });
+
+    });
+
+  }
 
 }

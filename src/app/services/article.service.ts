@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { ArticleRequest } from '../dtos/article-request';
 import { ArticleResponse } from '../dtos/article-response';
+import { ArticleEntity } from '../entities/article-entity';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,15 @@ export class ArticleService {
   findArticles(articleRequest: ArticleRequest) {
 
     return this.http.post<ArticleResponse>(this.URL, articleRequest)
+          .pipe(
+            catchError(this.handleError)
+          );
+
+  }
+
+  findArticleById(id: number) {
+
+    return this.http.get<ArticleEntity>(this.URL + "/" + id)
           .pipe(
             catchError(this.handleError)
           );
