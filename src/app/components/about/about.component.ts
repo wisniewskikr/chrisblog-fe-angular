@@ -2,6 +2,7 @@ declare const require: any;
 
 import { AfterViewInit, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-about',
@@ -12,8 +13,14 @@ import { RouterLink } from '@angular/router';
 })
 export class AboutComponent implements AfterViewInit{
 
+  constructor(private location: Location) {}
+
   ngAfterViewInit(): void {
     require('./../../../assets/js/main.js');
+  }
+
+  onClick() {
+    this.location.back();
   }
 
 }
