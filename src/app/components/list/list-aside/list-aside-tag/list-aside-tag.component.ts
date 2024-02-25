@@ -42,6 +42,26 @@ export class ListAsideTagComponent implements OnInit {
     
     this.handleTagApi(new TagRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
 
+  }  
+  
+  onClick(tag: number) {
+
+    this.tagId = (this.tagId != tag) ? tag : null;
+    this.searchText = null;
+    const path = `category/${this.categoryId}/sorting/${this.sorting}/page/${this.page}`;
+    this.router.navigate([path], { queryParams: { searchtext: this.searchText, tagid: this.tagId } });
+
+    if (this.categoryId == null || this.page == null || this.sorting == null) {
+      throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
+    }
+
+    if (this.categoryId == 0) {
+      this.tags = [];
+      return;
+    }
+
+    this.handleTagApi(new TagRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+
   }
 
   handleTagApi(tagRequest: TagRequest): void {
@@ -51,13 +71,6 @@ export class ListAsideTagComponent implements OnInit {
       this.tags = data.tags;
     });
 
-  }
-  
-  onClick(tag: number) {
-    this.tagId = (this.tagId != tag) ? tag : null;
-    this.searchText = null;
-    const path = `category/${this.categoryId}/sorting/${this.sorting}/page/${this.page}`;
-    this.router.navigate([path], { queryParams: { searchtext: this.searchText, tagid: this.tagId } });
   }
 
 }
