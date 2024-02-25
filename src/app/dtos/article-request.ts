@@ -1,4 +1,4 @@
-class ArticleRequest {
+export class ArticleRequest {
 
     private categoryId: number;
     private tagId: number;

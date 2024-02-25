@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleEntity } from '../../../../entities/article-entity';
 import { TemplateEnum } from '../../../../enums/template-enum';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ArticleService } from '../../../../services/article.service';
 
 @Component({
   selector: 'list-main-articles',
@@ -11,7 +12,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
   templateUrl: './list-main-articles.component.html',
   styleUrl: './list-main-articles.component.css'
 })
-export class ListMainArticlesComponent {
+export class ListMainArticlesComponent implements OnInit {
 
   articles: ArticleEntity[] = [
     {
@@ -62,7 +63,9 @@ export class ListMainArticlesComponent {
     }
   ];
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {}
+
+  ngOnInit(): void {
     
     this.activatedRoute.params.subscribe(params => {
       console.log("ListMainArticlesComponent - categoryId: " + params['categoryId']);
