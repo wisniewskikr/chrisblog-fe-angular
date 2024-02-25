@@ -1,12 +1,12 @@
 export class ArticleRequest {
-
+	
     private categoryId: number;
-    private tagId: number;
+    private tagId: number|null;
     private page: number;
     private sorting: string;
-    private searchText: string;
+    private searchText: string|null;
 
-	constructor($categoryId: number, $tagId: number, $page: number, $sorting: string, $searchText: string) {
+    constructor($categoryId: number, $tagId: number|null, $page: number, $sorting: string, $searchText: string|null) {
 		this.categoryId = $categoryId;
 		this.tagId = $tagId;
 		this.page = $page;
@@ -26,7 +26,7 @@ export class ArticleRequest {
      * Getter $tagId
      * @return {number}
      */
-	public get $tagId(): number {
+	public get $tagId(): number|null {
 		return this.tagId;
 	}
 
@@ -50,7 +50,7 @@ export class ArticleRequest {
      * Getter $searchText
      * @return {string}
      */
-	public get $searchText(): string {
+	public get $searchText(): string|null {
 		return this.searchText;
 	}
 
@@ -93,5 +93,5 @@ export class ArticleRequest {
 	public set $searchText(value: string) {
 		this.searchText = value;
 	}
-
+	
 }

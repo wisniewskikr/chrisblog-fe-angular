@@ -4,6 +4,7 @@ import { ArticleEntity } from '../../../../entities/article-entity';
 import { TemplateEnum } from '../../../../enums/template-enum';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ArticleService } from '../../../../services/article.service';
+import { ArticleRequest } from '../../../../dtos/article-request';
 
 @Component({
   selector: 'list-main-articles',
@@ -63,19 +64,49 @@ export class ListMainArticlesComponent implements OnInit {
     }
   ];
 
+  categoryId: number|null = null;
+  tagId: number|null = null;
+  page: number|null = null;
+  sorting: string|null = null;
+  searchText: string|null = null;
+
   constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {}
 
   ngOnInit(): void {
     
     this.activatedRoute.params.subscribe(params => {
-      console.log("ListMainArticlesComponent - categoryId: " + params['categoryId']);
-      console.log("ListMainArticlesComponent - sorting: " + params['sorting']);
-      console.log("ListMainArticlesComponent - page: " + params['page']);
+
+      this.categoryId = Number(params['categoryId']);
+      this.sorting = params['sorting'];
+      this.page = Number(params['page']);
+
+      if (this.categoryId == null || this.page == null || this.sorting == null) {
+        throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
+      }
+
+      this.articleService.findArticles(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+      
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
-      console.log("ListMainArticlesComponent - searchtext: " + params['searchtext']);
-      console.log("ListMainArticlesComponent - tagid: " + params['tagid']);
+
+      const searchTextParam = params['searchtext'];
+      const tagIdParam = params['tagid'];
+
+      if (searchTextParam == undefined && tagIdParam == undefined &&
+        this.searchText == null && this.tagId == null) {
+          return;
+      }
+
+      this.searchText = searchTextParam ?? null;
+      this.tagId = (tagIdParam != undefined) ? Number(tagIdParam) : null;
+
+      if (this.categoryId == null || this.page == null || this.sorting == null) {
+        throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
+      }
+
+      this.articleService.findArticles(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+
     });
 
   }
