@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaginationModel } from '../../../../models/pagination-model';
+import { PaginationDto } from '../../../../dtos/pagination-dto';
+import { PaginationService } from '../../../../services/pagination.service';
 
 @Component({
   selector: 'list-main-pagination',
@@ -11,12 +12,16 @@ import { PaginationModel } from '../../../../models/pagination-model';
 })
 export class ListMainPaginationComponent implements OnInit{  
 
-  pagination: PaginationModel|null = null;
+  pagination: PaginationDto|null = null;
+
+  constructor(private paginationService: PaginationService) {}
   
   ngOnInit(): void {
-    this.pagination = new PaginationModel();
-    this.pagination.setCurrentPage(1);
-    this.pagination.setPages([1,2,3]);
+    
+    this.paginationService.pagination$.subscribe((data)=>{ 
+      this.pagination = data;
+    });
+
   }
 
 }

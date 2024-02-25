@@ -5,6 +5,8 @@ import { TemplateEnum } from '../../../../enums/template-enum';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ArticleService } from '../../../../services/article.service';
 import { ArticleRequest } from '../../../../dtos/article-request';
+import { PaginationService } from '../../../../services/pagination.service';
+import { PaginationDto } from '../../../../dtos/pagination-dto';
 
 @Component({
   selector: 'list-main-articles',
@@ -22,7 +24,8 @@ export class ListMainArticlesComponent implements OnInit {
   sorting: string|null = null;
   searchText: string|null = null;
 
-  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {}
+  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService, 
+    private paginationService: PaginationService) {}
 
   ngOnInit(): void {
     
@@ -67,7 +70,14 @@ export class ListMainArticlesComponent implements OnInit {
 
     let response = this.articleService.findArticles(articleRequest);
     response.subscribe((data)=>{      
+      
       this.articles = data.articles;
+
+      if (this.page == null) {
+        throw new Error("Attribute 'page' is required.");
+      }
+      this.paginationService.updatePagination(new PaginationDto(this.page, data.pages, data.disablePrevious, data.disableNext));
+
     });
 
   }
