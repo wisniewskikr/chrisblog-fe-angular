@@ -1,10 +1,10 @@
 export enum TemplateEnum {
 
     NONE = 'null',
-    CONTENT = 'content',
-    LINK_ALBUM = 'link-album',
-    LINK_DOCUMENT = 'link-document',
-    LINK_GITHUB = 'link-github',
-    LINK_YOUTUME = 'link-youtube'
+    CONTENT = 'CONTENT',
+    LINK_ALBUM = 'LINK_ALBUM',
+    LINK_DOCUMENT = 'LINK_DOCUMENT',
+    LINK_GITHUB = 'LINK_GITHUB',
+    LINK_YOUTUBE = 'LINK_YOUTUBE'
 
 }

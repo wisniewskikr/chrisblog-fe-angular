@@ -62,14 +62,14 @@
 			            </p>
 			            				         
 			         	<!-- START ARTICLE CONTENT -->
-						<span *ngIf="article?.template == 'content'">
+						<span *ngIf="article?.template == 'CONTENT'">
 							<h2 class="mb-3 mt-5 articleSectionTitle">Description</h2>				            
 			            	<div class="row articleSection pt-md-4"> {{article?.content}} </div>	
 						</span>
 						<!-- STOP ARTICLE CONTENT -->
 						
 						<!-- START ARTICLE LINK ALBUM -->
-						<span *ngIf="article?.template == 'link-album'">
+						<span *ngIf="article?.template == 'LINK_ALBUM'">
 							<h2 class="mb-3 mt-5 articleSectionTitle">Google Album</h2>				            
 							<div class="row articleSection pt-md-4">
 								Pictures from this area you can find in my 
@@ -79,7 +79,7 @@
 						<!-- STOP ARTICLE LINK ALBUM -->
 
 						<!-- START ARTICLE LINK DOCUMENT -->
-						<span *ngIf="article?.template == 'link-document'">
+						<span *ngIf="article?.template == 'LINK_DOCUMENT'">
 							<h2 class="mb-3 mt-5 articleSectionTitle">Google Document</h2>				            
 							<div class="row articleSection pt-md-4">
 								More details about this topic you can find in my 
@@ -89,7 +89,7 @@
 						<!-- STOP ARTICLE LINK DOCUMENT -->
 
 						<!-- START ARTICLE LINK GITHUB -->
-						<span *ngIf="article?.template == 'link-github'">
+						<span *ngIf="article?.template == 'LINK_GITHUB'">
 							<h2 class="mb-3 mt-5 articleSectionTitle">Github Repository</h2>				            
 							<div class="row articleSection pt-md-4">
 								Source Code with explanation you can find in my 
@@ -99,7 +99,7 @@
 						<!-- STOP ARTICLE LINK GITHUB -->
 
 						<!-- START ARTICLE LINK YOUTUBE -->
-						<span *ngIf="article?.template == 'link-youtube'">
+						<span *ngIf="article?.template == 'LINK_YOUTUBE'">
 							<h2 class="mb-3 mt-5 articleSectionTitle">YouTube Channel</h2>				            
 							<div class="row articleSection pt-md-4">
 								More details about this topic you can find on my
