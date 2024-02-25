@@ -7,8 +7,7 @@
           
           <span *ngFor="let page of pagination?.getPages()">
               <li *ngIf="page == pagination?.getPage()" class="active"><span> {{page}} </span></li>
-              <!-- TODO -->
-              <li *ngIf="page != pagination?.getPage()"><a href="#"> {{page}} </a></li>
+              <li *ngIf="page != pagination?.getPage()"><a [routerLink]="" (click)="onClick(page)"> {{page}} </a></li>
           </span>
           
           <li *ngIf="pagination?.isDisableNext()" class="disabled"><span>&gt;</span></li>

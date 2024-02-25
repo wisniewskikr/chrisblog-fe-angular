@@ -85,4 +85,11 @@ export class ListMainPaginationComponent implements OnInit{
 
   }
 
+  onClick(newPage: number) {
+
+    const path = `category/${this.categoryId}/sorting/${this.sorting}/page/${newPage}`;
+    this.router.navigate([path], { queryParams: { searchtext: this.searchText, tagid: this.tagId } });
+
+  }
+
 }
