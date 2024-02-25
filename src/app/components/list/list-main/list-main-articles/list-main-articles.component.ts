@@ -84,11 +84,8 @@ export class ListMainArticlesComponent implements OnInit {
         throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
       }
 
-      let response = this.articleService.findArticles(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
-      response.subscribe((data)=>{      
-        console.log(data);
-      });
-      
+      this.handleArtilceApi(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+            
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
@@ -108,11 +105,17 @@ export class ListMainArticlesComponent implements OnInit {
         throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
       }
 
-      let response = this.articleService.findArticles(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
-      response.subscribe((data)=>{      
-        console.log(data);
-      });
+      this.handleArtilceApi(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+      
+    });    
 
+  }
+
+  handleArtilceApi(articleRequest: ArticleRequest): void {
+
+    let response = this.articleService.findArticles(articleRequest);
+    response.subscribe((data)=>{      
+      console.log(data);
     });
 
   }
