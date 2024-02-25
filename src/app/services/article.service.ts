@@ -11,13 +11,15 @@ export class ArticleService {
 
   constructor(private http: HttpClient) {}
 
-  findArticles() {
-    return this.http.get(this.URL, {responseType: 'json'})
+  findArticles(articleRequest: ArticleRequest) {
+
+    return this.http.post<ArticleRequest>(this.URL, articleRequest)
           .pipe(
             catchError((error) => {
               return throwError(() => error);
             })
           );
+
   }
 
 }
