@@ -15,55 +15,56 @@ import { ArticleRequest } from '../../../../dtos/article-request';
 })
 export class ListMainArticlesComponent implements OnInit {
 
-  articles: ArticleEntity[] = [
-    {
-      id: 1, 
-      pageDescription: 'Page description 1',
-      author: 'Author 1',
-      content: 'Content 1',
-      date: 'Date 1',
-      description: 'Description 1',
-      template: TemplateEnum.CONTENT,
-      title: 'Title 1',
-      url: 'Url 1',
-      category: {
-        id: 1,
-        name: 'Category 1',
-        articles: []
-      },
-      tags: [
-        {
-          id: 1,
-          name: 'Tag 1',
-          articles: []
-        }
-      ]
-    },
-    {
-      id: 2, 
-      pageDescription: 'Page description 2',
-      author: 'Author 2',
-      content: 'Content 2',
-      date: 'Date 2',
-      description: 'Description 2',
-      template: TemplateEnum.CONTENT,
-      title: 'Title 2',
-      url: 'Url 2',
-      category: {
-        id: 2,
-        name: 'Category 2',
-        articles: []
-      },
-      tags: [
-        {
-          id: 2,
-          name: 'Tag 2',
-          articles: []
-        }
-      ]
-    }
-  ];
+  // articles: ArticleEntity[] = [
+  //   {
+  //     id: 1, 
+  //     pageDescription: 'Page description 1',
+  //     author: 'Author 1',
+  //     content: 'Content 1',
+  //     date: 'Date 1',
+  //     description: 'Description 1',
+  //     template: TemplateEnum.CONTENT,
+  //     title: 'Title 1',
+  //     url: 'Url 1',
+  //     category: {
+  //       id: 1,
+  //       name: 'Category 1',
+  //       articles: []
+  //     },
+  //     tags: [
+  //       {
+  //         id: 1,
+  //         name: 'Tag 1',
+  //         articles: []
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     id: 2, 
+  //     pageDescription: 'Page description 2',
+  //     author: 'Author 2',
+  //     content: 'Content 2',
+  //     date: 'Date 2',
+  //     description: 'Description 2',
+  //     template: TemplateEnum.CONTENT,
+  //     title: 'Title 2',
+  //     url: 'Url 2',
+  //     category: {
+  //       id: 2,
+  //       name: 'Category 2',
+  //       articles: []
+  //     },
+  //     tags: [
+  //       {
+  //         id: 2,
+  //         name: 'Tag 2',
+  //         articles: []
+  //       }
+  //     ]
+  //   }
+  // ];
 
+  articles: ArticleEntity[] = [];
   categoryId: number|null = null;
   tagId: number|null = null;
   page: number|null = null;
@@ -115,7 +116,7 @@ export class ListMainArticlesComponent implements OnInit {
 
     let response = this.articleService.findArticles(articleRequest);
     response.subscribe((data)=>{      
-      console.log(data);
+      this.articles = data.articles;
     });
 
   }

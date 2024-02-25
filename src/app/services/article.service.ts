@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { ArticleRequest } from '../dtos/article-request';
+import { ArticleResponse } from '../dtos/article-response';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class ArticleService {
 
   findArticles(articleRequest: ArticleRequest) {
 
-    return this.http.post<ArticleRequest>(this.URL, articleRequest)
+    return this.http.post<ArticleResponse>(this.URL, articleRequest)
           .pipe(
             catchError(this.handleError)
           );
