@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CategoryEntity } from '../../../../entities/category-entity';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { CategoryService } from '../../../../services/category.service';
 
 @Component({
   selector: 'list-aside-categories',
@@ -10,28 +11,18 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   templateUrl: './list-aside-categories.component.html',
   styleUrl: './list-aside-categories.component.css'
 })
-export class ListAsideCategoriesComponent {
+export class ListAsideCategoriesComponent implements OnInit {
 
-  categories: CategoryEntity[] = [
-    {
-      id: 1,
-      name: 'Category 1',
-      articles: []
-    },
-    {
-      id: 2,
-      name: 'Category 2',
-      articles: []
-    }
-  ];
-
+  categories: CategoryEntity[] = [];
   categoryId: number|null = null;
   soring: string|null = null;
   page: string|null = null;
   searchText: string|null = null;
   tagId: string|null = null;
   
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private categoryService: CategoryService) {}
+  
+  ngOnInit(): void {
 
     this.activatedRoute.params.subscribe(params => {
       this.categoryId = Number(params['categoryId']);
@@ -42,6 +33,11 @@ export class ListAsideCategoriesComponent {
     this.activatedRoute.queryParams.subscribe(params => {
       this.searchText = params['searchtext'];
       this.tagId = params['tagid'];
+    });
+    
+    let response = this.categoryService.findCategories();
+    response.subscribe((data)=>{      
+      this.categories = data.categories;
     });
 
   }
