@@ -26,21 +26,39 @@ export class ListAsideTagComponent implements OnInit {
   ngOnInit(): void {
     
     this.activatedRoute.params.subscribe(params => {
+
       this.categoryId = Number(params['categoryId']);
       this.sorting = params['sorting'];
       this.page = Number(params['page']);
+
+      if (this.categoryId == null || this.page == null || this.sorting == null) {
+        throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
+      }
+      
+      this.handleTagApi(new TagRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
-      this.searchText = params['searchtext'];
-      this.tagId = (params['tagid'] != undefined) ? Number(params['tagid']) : null;
-    });
 
-    if (this.categoryId == null || this.page == null || this.sorting == null) {
-      throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
-    }
-    
-    this.handleTagApi(new TagRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+      const searchTextParam = params['searchtext'];
+      const tagIdParam = params['tagid'];
+      
+      if (searchTextParam == undefined && tagIdParam == undefined &&
+        this.searchText == null && this.tagId == null) {
+          return;
+      }
+
+      this.searchText = searchTextParam ?? null;
+      this.tagId = (tagIdParam != undefined) ? Number(tagIdParam) : null;
+
+      if (this.categoryId == null || this.page == null || this.sorting == null) {
+        throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
+      }
+      
+      this.handleTagApi(new TagRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+
+    });    
 
   }  
   
@@ -50,17 +68,6 @@ export class ListAsideTagComponent implements OnInit {
     this.searchText = null;
     const path = `category/${this.categoryId}/sorting/${this.sorting}/page/${this.page}`;
     this.router.navigate([path], { queryParams: { searchtext: this.searchText, tagid: this.tagId } });
-
-    if (this.categoryId == null || this.page == null || this.sorting == null) {
-      throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
-    }
-
-    if (this.categoryId == 0) {
-      this.tags = [];
-      return;
-    }
-
-    this.handleTagApi(new TagRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
 
   }
 
