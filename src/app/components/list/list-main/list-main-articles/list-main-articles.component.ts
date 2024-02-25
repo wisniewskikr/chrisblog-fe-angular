@@ -84,7 +84,10 @@ export class ListMainArticlesComponent implements OnInit {
         throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
       }
 
-      this.articleService.findArticles(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+      let response = this.articleService.findArticles(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+      response.subscribe((data)=>{      
+        console.log(data);
+      });
       
     });
 
@@ -105,7 +108,10 @@ export class ListMainArticlesComponent implements OnInit {
         throw new Error("Atributes 'categoryId', 'page' and 'sorting' are required.");
       }
 
-      this.articleService.findArticles(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+      let response = this.articleService.findArticles(new ArticleRequest(this.categoryId, this.tagId, this.page, this.sorting, this.searchText));
+      response.subscribe((data)=>{      
+        console.log(data);
+      });
 
     });
 
