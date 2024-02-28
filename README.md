@@ -1,5 +1,5 @@
 TODO PRIORYTY HIGH:
-* Fix problem with aos library (probably jQuery onLoad)
+* Fix problem with aos library (probably jQuery onLoad - file 'main.js')
 * Fix problem with aside on small screens
 * Dockerize application
 * Deploy on Heroku
