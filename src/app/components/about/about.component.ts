@@ -3,6 +3,7 @@ declare const require: any;
 import { AfterViewInit, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Location } from '@angular/common';
+import $ from "jquery";
 
 @Component({
   selector: 'app-about',
@@ -16,7 +17,7 @@ export class AboutComponent implements AfterViewInit{
   constructor(private location: Location) {}
 
   ngAfterViewInit(): void {
-    require('./../../../assets/js/main.js');
+    $.getScript('./../../../assets/js/main.js');
   }
 
   onClick() {

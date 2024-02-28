@@ -9,3 +9,7 @@ TODO PRIORITY LOW:
 * Search - add validation
 * Search - add enter handling
 * Add security communication
+
+Implement JQuery:
+* npm install @types/jquery --save-dev
+* npm install jquery --save
