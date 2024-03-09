@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { TagEntity } from '../../../../entities/tag-entity';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -12,7 +12,7 @@ import { TagRequest } from '../../../../dtos/tag-request';
   templateUrl: './list-aside-tag.component.html',
   styleUrl: './list-aside-tag.component.css'
 })
-export class ListAsideTagComponent implements OnInit {
+export class ListAsideTagComponent implements OnInit, AfterViewInit {
 
   tags: TagEntity[] = [];
   categoryId: number|null = null;
@@ -27,6 +27,8 @@ export class ListAsideTagComponent implements OnInit {
     
     this.activatedRoute.params.subscribe(params => {
 
+      $.getScript('./../../../../../assets/js/main.js');
+
       this.categoryId = Number(params['categoryId']);
       this.sorting = params['sorting'];
       this.page = Number(params['page']);
@@ -40,6 +42,8 @@ export class ListAsideTagComponent implements OnInit {
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
+
+      $.getScript('./../../../../../assets/js/main.js');
 
       const searchTextParam = params['searchtext'];
       const tagIdParam = params['tagid'];
@@ -61,6 +65,10 @@ export class ListAsideTagComponent implements OnInit {
     });    
 
   }  
+
+  ngAfterViewInit(): void {
+    $.getScript('./../../../../../assets/js/main.js');
+  }
   
   onClick(tag: number) {
 
