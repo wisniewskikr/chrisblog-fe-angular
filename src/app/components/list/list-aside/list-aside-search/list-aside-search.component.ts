@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './list-aside-search.component.html',
   styleUrl: './list-aside-search.component.css'
 })
-export class ListAsideSearchComponent {
+export class ListAsideSearchComponent implements AfterViewInit {
 
   categoryId: number|null = null;
   soring: string|null = null;
@@ -30,6 +30,10 @@ export class ListAsideSearchComponent {
       this.tagId = (params['tagid'] != undefined) ? Number(params['tagid']) : null;
     });
 
+  }
+
+  ngAfterViewInit(): void {
+    $.getScript('./../../../../../assets/js/main.js');
   }
 
   onClickSearch(text: string) {
