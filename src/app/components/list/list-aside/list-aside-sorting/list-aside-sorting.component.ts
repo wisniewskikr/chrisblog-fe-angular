@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { SortingEnum } from '../../../../enums/sorting-enum';
 import { ActivatedRoute, Router } from '@angular/router';
+import $ from "jquery";
 
 @Component({
   selector: 'list-aside-sorting',
@@ -10,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './list-aside-sorting.component.html',
   styleUrl: './list-aside-sorting.component.css'
 })
-export class ListAsideSortingComponent {
+export class ListAsideSortingComponent implements AfterViewInit {
 
   sorting: SortingEnum[] = [SortingEnum.AUTHOR_DECREASING, SortingEnum.AUTHOR_INCREASING, SortingEnum.DATE_DECREASING, 
                             SortingEnum.DATE_INCREASING, SortingEnum.TITLE_DECREASING, SortingEnum.TITLE_INCREASING];
@@ -34,6 +35,10 @@ export class ListAsideSortingComponent {
       this.tagId = params['tagid'];
     });
 
+  }
+
+  ngAfterViewInit(): void {
+    $.getScript('./../../../../../assets/js/custom.js');
   }
 
   onChange(event: any) {

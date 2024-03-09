@@ -12,7 +12,7 @@ import $ from "jquery";
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })
-export class AboutComponent implements AfterViewInit{
+export class AboutComponent implements AfterViewInit {
 
   constructor(private location: Location) {}
 
