@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleEntity } from '../../../../entities/article-entity';
-import { TemplateEnum } from '../../../../enums/template-enum';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ArticleService } from '../../../../services/article.service';
 import { ArticleRequest } from '../../../../dtos/article-request';
