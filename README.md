@@ -1,4 +1,5 @@
 TODO PRIORYTY HIGH:
+* Implement unescaped text
 * Add 16 missing articles
 * Dockerize application
 * Deploy on Heroku
