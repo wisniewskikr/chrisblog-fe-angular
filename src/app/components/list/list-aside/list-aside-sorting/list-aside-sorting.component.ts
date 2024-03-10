@@ -39,6 +39,7 @@ export class ListAsideSortingComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     $.getScript('./../../../../../assets/js/custom.js');
+    $.getScript('./../../../../../assets/js/main.js');
   }
 
   onChange(event: any) {
