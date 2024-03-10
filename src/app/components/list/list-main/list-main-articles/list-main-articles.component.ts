@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ArticleEntity } from '../../../../entities/article-entity';
-import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ArticleService } from '../../../../services/article.service';
 import { ArticleRequest } from '../../../../dtos/article-request';
 import { PaginationService } from '../../../../services/pagination.service';
 import { PaginationDto } from '../../../../dtos/pagination-dto';
+import { ListMainArticlesArticleComponent } from './list-main-articles-article/list-main-articles-article.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'list-main-articles',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, ListMainArticlesArticleComponent],
   templateUrl: './list-main-articles.component.html',
   styleUrl: './list-main-articles.component.css'
 })
