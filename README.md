@@ -1,14 +1,13 @@
 TODO PRIORYTY HIGH:
-* Fix problem with aos library (probably jQuery onLoad - file 'main.js')
-* Fix problem with aside on small screens
+* Add 16 missing articles
 * Dockerize application
 * Deploy on Heroku
 
 TODO PRIORITY LOW:
-* Add 16 missing articles
 * Search - add validation
 * Search - add enter handling
 * Add security communication
+* Articles - add waiting circle
 
 Implement JQuery:
 * npm install @types/jquery --save-dev
