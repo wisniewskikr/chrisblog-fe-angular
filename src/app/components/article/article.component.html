@@ -52,7 +52,7 @@
 						<hr class="line d-none d-xl-block">						
     						
    						<h2 class="mb-3 mt-5 articleSectionTitle">Introduction</h2>
-   						<div class="row articleSection pt-md-4"> {{article?.description}} </div>
+   						<div class="row articleSection pt-md-4" [innerHtml]="article?.description"></div>
    						
    						<p class="article-img">
 			              <img src="https://chrisblog.s3-eu-west-1.amazonaws.com/articles/article-{{article?.id}}/main.jpg" alt="" class="img-fluid">
@@ -61,7 +61,7 @@
 			         	<!-- START ARTICLE CONTENT -->
 						<span *ngIf="article?.template == 'CONTENT'">
 							<h2 class="mb-3 mt-5 articleSectionTitle">Description</h2>				            
-			            	<div class="row articleSection pt-md-4"> {{article?.content}} </div>	
+			            	<div class="row articleSection pt-md-4" [innerHtml]="article?.content"></div>	
 						</span>
 						<!-- STOP ARTICLE CONTENT -->
 						
