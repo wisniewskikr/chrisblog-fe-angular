@@ -1,14 +1,14 @@
 TODO PRIORYTY HIGH:
-* Implement unescaped text
-* Add 16 missing articles
 * Dockerize application
 * Deploy on Heroku
 
 TODO PRIORITY LOW:
-* Search - add validation
-* Search - add enter handling
-* Add security communication
 * Articles - add waiting circle
+* Search - add enter handling
+* Search - add validation
+* List - add category
+* Article - add category
+* Add security communication
 
 Implement JQuery:
 * npm install @types/jquery --save-dev
