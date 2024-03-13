@@ -1,5 +1,8 @@
 TODO PRIORYTY HIGH:
-* Dockerize application
+* Environment variables for BE
+* Open API 3 for BE
+* Environment variables for FE
+* Dockerize applications
 * Deploy on Heroku
 
 TODO PRIORITY LOW:
