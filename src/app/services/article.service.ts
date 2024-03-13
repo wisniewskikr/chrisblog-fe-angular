@@ -4,13 +4,14 @@ import { catchError, throwError } from 'rxjs';
 import { ArticleRequest } from '../dtos/article-request';
 import { ArticleResponse } from '../dtos/article-response';
 import { ArticleEntity } from '../entities/article-entity';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
 
-  URL = 'http://localhost:8080/api/v1/article';
+  URL = environment.beUrl + '/api/v1/article';
 
   constructor(private http: HttpClient) {}
 

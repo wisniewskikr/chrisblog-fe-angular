@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { TagRequest } from '../dtos/tag-request';
 import { TagResponse } from '../dtos/tag-response';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TagService {
 
-  URL = 'http://localhost:8080/api/v1/tag';
+  URL = environment.beUrl + '/api/v1/tag';
 
   constructor(private http: HttpClient) {}
 

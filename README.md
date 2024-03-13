@@ -1,5 +1,4 @@
 TODO PRIORYTY HIGH:
-* Environment variables for FE
 * Dockerize applications
 * Deploy on Heroku
 

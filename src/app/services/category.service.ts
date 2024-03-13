@@ -2,13 +2,14 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { CategoryResponse } from '../dtos/category-response';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  URL = 'http://localhost:8080/api/v1/category';
+  URL = environment.beUrl + '/api/v1/category';
 
   constructor(private http: HttpClient) {}
 
