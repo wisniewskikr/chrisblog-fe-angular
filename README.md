@@ -1,5 +1,4 @@
 TODO PRIORYTY HIGH:
-* Open API 3 for BE
 * Environment variables for FE
 * Dockerize applications
 * Deploy on Heroku
