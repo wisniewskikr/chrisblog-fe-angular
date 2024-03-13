@@ -1,5 +1,4 @@
 TODO PRIORYTY HIGH:
-* Environment variables for BE
 * Open API 3 for BE
 * Environment variables for FE
 * Dockerize applications
