@@ -1,5 +1,4 @@
 TODO PRIORYTY HIGH:
-* Dockerize applications
 * Deploy on Heroku
 
 TODO PRIORITY LOW:
