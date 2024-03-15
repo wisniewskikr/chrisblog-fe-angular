@@ -2,6 +2,7 @@ TODO PRIORYTY HIGH:
 * Deploy on Heroku
 
 TODO PRIORITY LOW:
+* Articles - improvement pagination (hand instead of arrow)
 * Articles - add waiting circle
 * Books - remove 'Ted' tag
 * Search - add enter handling
@@ -25,7 +26,7 @@ USAGE DOCKER
 Usage steps:
 1. In a command line tool build Docker image with `docker build -t chrisblog-fe-angular-image .`
 1. (Optional) Check docker image with `docker images`
-1. In a command line tool start Docker container with `docker run -d -p 4200:4200 --name chrisblog-fe-angular-container chrisblog-fe-angular-image`
+1. In a command line tool start Docker container with `docker run -d -p 4200:80 --name chrisblog-fe-angular-container chrisblog-fe-angular-image`
 1. (Optional) Check docker container with `docker ps -a`
 1. In a browser visit `http://localhost:4200`
 1. (Optional) Check application logs
