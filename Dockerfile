@@ -1,4 +1,4 @@
-FROM node:latest As builder
+FROM node:20.11.1-slim As builder
 
 WORKDIR /usr/src/app
 
