@@ -2,7 +2,6 @@ TODO PRIORYTY HIGH:
 * Deploy on Heroku
 
 TODO PRIORITY LOW:
-* Articles - improvement pagination (hand instead of arrow)
 * Articles - add waiting circle
 * Books - remove 'Ted' tag
 * Search - add enter handling

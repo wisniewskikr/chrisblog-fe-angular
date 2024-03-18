@@ -3,15 +3,15 @@
       <div class="block-27">
         <ul>
           <li *ngIf="pagination?.isDisablePrevious()" class="disabled"><span>&lt;</span></li>
-          <li *ngIf="!pagination?.isDisablePrevious()"><a [routerLink]="" (click)="onClickPrevious()">&lt;</a></li>
+          <li *ngIf="!pagination?.isDisablePrevious()"><a [routerLink]="" (click)="onClickPrevious()" class="pointer">&lt;</a></li>
           
           <span *ngFor="let page of pagination?.getPages()">
               <li *ngIf="page == pagination?.getPage()" class="active"><span> {{page}} </span></li>
-              <li *ngIf="page != pagination?.getPage()"><a [routerLink]="" (click)="onClick(page)"> {{page}} </a></li>
+              <li *ngIf="page != pagination?.getPage()"><a [routerLink]="" (click)="onClick(page)" class="pointer"> {{page}} </a></li>
           </span>
           
           <li *ngIf="pagination?.isDisableNext()" class="disabled"><span>&gt;</span></li>
-          <li *ngIf="!pagination?.isDisableNext()"><a [routerLink]="" (click)="onClickNext()">&gt;</a></li>
+          <li *ngIf="!pagination?.isDisableNext()"><a [routerLink]="" (click)="onClickNext()" class="pointer">&gt;</a></li>
         </ul>
       </div>		            
     </div>
