@@ -9,6 +9,7 @@ TODO PRIORITY LOW:
 * Search - add validation
 * List - add category
 * Article - add category
+* Errors - handle 404 and other errors
 * Add security communication
 
 Implement JQuery:
