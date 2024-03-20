@@ -6,7 +6,7 @@
                 <span *ngIf="articles.length != 0" class="full-width">
                     <list-main-sorting />
                     
-                    <list-main-articles />
+                    <list-main-articles [articles]="articles" />
 
                     <list-main-pagination />
                 </span>                
