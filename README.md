@@ -33,3 +33,11 @@ Usage steps:
 1. Clean up environment 
      * In a command line tool stop and remove Docker container with `docker rm -f chrisblog-fe-angular-container`
      * In a command line tool stop and remove Docker image with `docker rmi chrisblog-fe-angular-image`
+
+
+TEST HEROKU
+-----------
+
+npm run heroku-postbuild
+
+npm run start
