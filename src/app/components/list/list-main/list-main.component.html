@@ -8,7 +8,7 @@
                     
                     <list-main-articles [articles]="articles" />
 
-                    <list-main-pagination />
+                    <list-main-pagination [pages]="pages" [disablePrevious]="disablePrevious" [disableNext]="disableNext"/>
                 </span>                
 
                 <span *ngIf="articles.length == 0">

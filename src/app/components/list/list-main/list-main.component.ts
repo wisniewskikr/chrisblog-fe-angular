@@ -6,9 +6,7 @@ import { ListMainArticlesComponent } from './list-main-articles/list-main-articl
 import { ArticleEntity } from '../../../entities/article-entity';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../../../services/article.service';
-import { PaginationService } from '../../../services/pagination.service';
 import { ArticleRequest } from '../../../dtos/article-request';
-import { PaginationDto } from '../../../dtos/pagination-dto';
 
 @Component({
   selector: 'list-main',
@@ -25,9 +23,11 @@ export class ListMainComponent implements OnInit {
   page: number|null = null;
   sorting: string|null = null;
   searchText: string|null = null;
+  pages: number[] = [];
+  disablePrevious: boolean = false; 
+  disableNext: boolean = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService, 
-    private paginationService: PaginationService) {}
+  constructor(private activatedRoute: ActivatedRoute, private articleService: ArticleService) {}
 
   ngOnInit(): void {
     
@@ -74,11 +74,9 @@ export class ListMainComponent implements OnInit {
     response.subscribe((data)=>{      
       
       this.articles = data.articles;
-
-      if (this.page == null) {
-        throw new Error("Attribute 'page' is required.");
-      }
-      this.paginationService.updatePagination(new PaginationDto(this.page, data.pages, data.disablePrevious, data.disableNext));
+      this.pages = data.pages;
+      this.disablePrevious = data.disablePrevious;
+      this.disableNext = data.disableNext;
 
     });
 

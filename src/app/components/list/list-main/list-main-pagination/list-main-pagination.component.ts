@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaginationDto } from '../../../../dtos/pagination-dto';
-import { PaginationService } from '../../../../services/pagination.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
@@ -13,20 +11,18 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 })
 export class ListMainPaginationComponent implements OnInit{  
 
-  pagination: PaginationDto|null = null;
   categoryId: number|null = null;
   sorting: string|null = null;
   page: number|null = null;
   searchText: string|null = null;
   tagId: number|null = null;
+  @Input() pages: number[] = [];
+  @Input() disablePrevious: boolean = false; 
+  @Input() disableNext: boolean = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private paginationService: PaginationService) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
   
   ngOnInit(): void {
-
-    this.paginationService.pagination$.subscribe((data)=>{ 
-      this.pagination = data;
-    });
 
     this.activatedRoute.params.subscribe(params => {
 
@@ -55,10 +51,6 @@ export class ListMainPaginationComponent implements OnInit{
 
   onClickPrevious() {
 
-    if (this.pagination == null) {
-      throw new Error("Object PaginationDto can not be empty");
-    }
-
     if (this.page == null) {
       throw new Error("Object Page can not be null");
     }
@@ -70,10 +62,6 @@ export class ListMainPaginationComponent implements OnInit{
   }
 
   onClickNext() {
-
-    if (this.pagination == null) {
-      throw new Error("Object PaginationDto can not be empty");
-    }
 
     if (this.page == null) {
       throw new Error("Object Page can not be null");

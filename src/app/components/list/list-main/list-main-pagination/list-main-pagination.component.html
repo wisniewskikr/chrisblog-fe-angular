@@ -2,16 +2,16 @@
     <div class="col text-center text-md-left">
       <div class="block-27">
         <ul>
-          <li *ngIf="pagination?.isDisablePrevious()" class="disabled"><span>&lt;</span></li>
-          <li *ngIf="!pagination?.isDisablePrevious()"><a [routerLink]="" (click)="onClickPrevious()" class="pointer">&lt;</a></li>
+          <li *ngIf="disablePrevious" class="disabled"><span>&lt;</span></li>
+          <li *ngIf="!disablePrevious"><a [routerLink]="" (click)="onClickPrevious()" class="pointer">&lt;</a></li>
           
-          <span *ngFor="let page of pagination?.getPages()">
-              <li *ngIf="page == pagination?.getPage()" class="active"><span> {{page}} </span></li>
-              <li *ngIf="page != pagination?.getPage()"><a [routerLink]="" (click)="onClick(page)" class="pointer"> {{page}} </a></li>
+          <span *ngFor="let pageItem of pages">
+              <li *ngIf="pageItem == page" class="active"><span> {{pageItem}} </span></li>
+              <li *ngIf="pageItem != page"><a [routerLink]="" (click)="onClick(pageItem)" class="pointer"> {{pageItem}} </a></li>
           </span>
           
-          <li *ngIf="pagination?.isDisableNext()" class="disabled"><span>&gt;</span></li>
-          <li *ngIf="!pagination?.isDisableNext()"><a [routerLink]="" (click)="onClickNext()" class="pointer">&gt;</a></li>
+          <li *ngIf="disableNext" class="disabled"><span>&gt;</span></li>
+          <li *ngIf="!disableNext"><a [routerLink]="" (click)="onClickNext()" class="pointer">&gt;</a></li>
         </ul>
       </div>		            
     </div>
