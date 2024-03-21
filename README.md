@@ -1,13 +1,16 @@
-TODO PRIORYTY HIGH:
-* Deploy on Heroku
+TODO PRIORITY HIGH:
+* Switch domain to angular app
 
 TODO PRIORITY LOW:
+* File application.properties for PROD for BE app
+* Check missing articles - for instance from Kosovo
 * Books - remove 'Ted' tag
 * Search - add enter handling
 * Search - add validation
 * List - add category
 * Article - add category
 * Errors - handle 404 and other errors
+* Application version from pom.xml
 * Add security communication
 
 Implement JQuery:
