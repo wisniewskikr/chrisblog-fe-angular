@@ -1,7 +1,9 @@
 TODO PRIORITY HIGH:
-* Switch domain to angular app
+* Fix refresh
 
 TODO PRIORITY LOW:
+* Update flavico
+* Remove footer for mobile screens
 * Check missing articles - for instance from Kosovo
 * Books - remove 'Ted' tag
 * Search - add enter handling
