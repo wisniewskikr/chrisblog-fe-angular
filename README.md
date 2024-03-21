@@ -2,7 +2,6 @@ TODO PRIORITY HIGH:
 * Switch domain to angular app
 
 TODO PRIORITY LOW:
-* File application.properties for PROD for BE app
 * Check missing articles - for instance from Kosovo
 * Books - remove 'Ted' tag
 * Search - add enter handling
@@ -16,6 +15,13 @@ TODO PRIORITY LOW:
 Implement JQuery:
 * npm install @types/jquery --save-dev
 * npm install jquery --save
+
+
+USAGE LOCAL
+-----------
+
+Command to run application on dev/local environment:
+* ng serve
 
 
 USAGE DOCKER
