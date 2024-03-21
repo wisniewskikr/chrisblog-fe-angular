@@ -1,4 +1,3 @@
 export const environment = {
-    production: false,
-    beUrl: 'http://localhost:8080'
+    beUrl: 'https://chrisblog-be-springboot-6f11fae4ae14.herokuapp.com'
 };
