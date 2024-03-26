@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { ArticleRequest } from '../dtos/article-request';
@@ -17,7 +17,18 @@ export class ArticleService {
 
   findArticles(articleRequest: ArticleRequest) {
 
-    return this.http.post<ArticleResponse>(this.URL, articleRequest)
+    let params = new HttpParams();
+    params = params.append('categoryId', articleRequest.$categoryId);
+    params = params.append('page', articleRequest.$page);    
+    params = params.append('sorting', articleRequest.$sorting);
+    if (articleRequest.$searchText) {
+      params = params.append('searchText', articleRequest.$searchText);
+    }
+    if (articleRequest.$tagId) {
+      params = params.append('tagId', articleRequest.$tagId);
+    }    
+
+    return this.http.get<ArticleResponse>(this.URL, { params: params })
           .pipe(
             catchError(this.handleError)
           );
