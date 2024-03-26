@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 import { TagRequest } from '../dtos/tag-request';
@@ -16,7 +16,18 @@ export class TagService {
 
   findTags(tagRequest: TagRequest) {
 
-    return this.http.post<TagResponse>(this.URL, tagRequest)
+    let params = new HttpParams();
+    params = params.append('categoryId', tagRequest.$categoryId);
+    params = params.append('page', tagRequest.$page);    
+    params = params.append('sorting', tagRequest.$sorting);
+    if (tagRequest.$searchText) {
+      params = params.append('searchText', tagRequest.$searchText);
+    }
+    if (tagRequest.$tagId) {
+      params = params.append('tagId', tagRequest.$tagId);
+    }
+
+    return this.http.get<TagResponse>(this.URL, { params: params })
           .pipe(
             catchError(this.handleError)
           );
