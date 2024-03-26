@@ -3,7 +3,8 @@ TODO PRIORITY HIGH:
 
 TODO PRIORITY LOW:
 * Update flavico
-* Remove footer for mobile screens
+* Fix footer for mobile screens
+* Fix tags for mobile screens
 * Check missing articles - for instance from Kosovo
 * Books - remove 'Ted' tag
 * Search - add enter handling
