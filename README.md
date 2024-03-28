@@ -50,6 +50,12 @@ Usage steps:
 TEST HEROKU
 -----------
 
-npm run heroku-postbuild
-
-npm run start
+Steps:
+* Update BE file "application-dev.properties":
+  * fe.url=http://localhost:3000
+* Update FE file "environment.ts"
+  * beUrl: 'http://localhost:8080'
+* Run BE with: `mvn spring-boot:run -D"spring-boot.run.profiles"="dev"`
+* Build FE with: `npm run heroku-postbuild`
+* Run FE with: `npm run start`
+* Open application with `http://localhost:3000`
