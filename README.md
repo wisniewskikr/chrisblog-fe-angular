@@ -1,8 +1,4 @@
-TODO PRIORITY HIGH:
-* Fix refresh
-
 TODO PRIORITY LOW:
-* Update flavico
 * Fix footer for mobile screens
 * Fix tags for mobile screens
 * Check missing articles - for instance from Kosovo
@@ -20,11 +16,28 @@ Implement JQuery:
 * npm install jquery --save
 
 
-USAGE LOCAL
------------
+USAGE LOCAL DEV
+---------------
 
-Command to run application on dev/local environment:
+Command BE:
+* mvn spring-boot:run -D"spring-boot.run.profiles"="dev"
+
+Command FE:
 * ng serve
+
+
+USAGE LOCAL PROD (HEROKU)
+--------------------------
+
+Steps:
+* Update BE file "application-dev.properties":
+  * fe.url=http://localhost:3000
+* Update FE file "environment.ts"
+  * beUrl: 'http://localhost:8080'
+* Run BE with: `mvn spring-boot:run -D"spring-boot.run.profiles"="dev"`
+* Build FE with: `npm run heroku-postbuild`
+* Run FE with: `npm run start`
+* Open application with `http://localhost:3000`
 
 
 USAGE DOCKER
@@ -45,17 +58,3 @@ Usage steps:
 1. Clean up environment 
      * In a command line tool stop and remove Docker container with `docker rm -f chrisblog-fe-angular-container`
      * In a command line tool stop and remove Docker image with `docker rmi chrisblog-fe-angular-image`
-
-
-TEST HEROKU
------------
-
-Steps:
-* Update BE file "application-dev.properties":
-  * fe.url=http://localhost:3000
-* Update FE file "environment.ts"
-  * beUrl: 'http://localhost:8080'
-* Run BE with: `mvn spring-boot:run -D"spring-boot.run.profiles"="dev"`
-* Build FE with: `npm run heroku-postbuild`
-* Run FE with: `npm run start`
-* Open application with `http://localhost:3000`
